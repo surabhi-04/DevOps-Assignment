@@ -1,6 +1,8 @@
-# DevOps Assignment
+# **DevOps Assignment**
 
-This project consists of a FastAPI backend and a Next.js frontend that communicates with the backend.
+This project implements a production-oriented infrastructure setup for a simple FastAPI backend and Next.js frontend application.
+
+While the application itself is intentionally minimal, the primary focus of this repository is infrastructure design, environment separation, CI/CD automation, containerization, and operational readiness using AWS and Infrastructure as Code (Terraform).
 
 ## Project Structure
 
