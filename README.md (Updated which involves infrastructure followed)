@@ -7,7 +7,6 @@ While the application itself is intentionally simple, the primary focus of this 
 
 # Project Structure
 
-```
 .
 ├── backend/                     # FastAPI backend service
 │   ├── app/
@@ -34,7 +33,6 @@ While the application itself is intentionally simple, the primary focus of this 
 │   └── terraform.tfvars         # Environment configuration
 │
 └── README.md                    # Project documentation
-```
 
 
 # Infrastructure Components Implemented
@@ -65,99 +63,94 @@ Before running this project locally, ensure the following tools are installed:
 
 1. Navigate to the backend directory
 
-```bash
+
 cd backend
-```
+
 
 2. Create a virtual environment (recommended)
 
-```bash
+
 python -m venv venv
 source venv/bin/activate
 # On Windows:
 .\venv\Scripts\activate
-```
+
 
 3. Install dependencies
 
-```bash
+
 pip install -r requirements.txt
-```
+
 
 4. Run the FastAPI server
 
-```bash
+
 uvicorn app.main:app --reload --port 8000
-```
+
 
 The backend will be available at:
 
-```
-http://localhost:8000
-```
 
----
+http://localhost:8000
+
+
 
 # Frontend Setup
 
 1. Navigate to the frontend directory
 
-```bash
+
 cd frontend
-```
+
 
 2. Install dependencies
 
-```bash
+
 npm install
-```
+
 
 3. Configure backend URL (optional)
 
 Edit `.env.local`:
 
-```
+
 NEXT_PUBLIC_API_URL=http://localhost:8000
-```
+
 
 4. Run the frontend server
 
-```bash
 npm run dev
-```
+
 
 The frontend will be available at:
 
-```
-http://localhost:3000
-```
 
----
+http://localhost:3000
+
+
 
 # Running the Application with Docker
 
 Build and run containers using Docker Compose:
 
-```bash
+
 docker compose build
 docker compose up -d
-```
+
 
 Services will be available at:
 
 Frontend
 
-```
+
 http://localhost:3000
-```
+
 
 Backend
 
-```
 http://localhost:8000
-```
 
----
+
 
 # Testing the Integration
 
@@ -165,9 +158,9 @@ http://localhost:8000
 
 2. Open the frontend in your browser:
 
-```
+
 http://localhost:3000
-```
+
 
 3. If everything is working correctly, you should see:
 
@@ -175,40 +168,37 @@ http://localhost:3000
 - The integration message from the backend
 - The current backend URL being used
 
----
+
 
 # API Endpoints
 
 Health Check
 
-```
 GET /api/health
-```
+
 
 Response
 
-```json
+json
 {
   "status": "healthy",
   "message": "Backend is running successfully"
 }
-```
+
 
 Integration Message
 
-```
+
 GET /api/message
-```
+
 
 Response
-
-```json
+json
 {
   "message": "You've successfully integrated the backend!"
 }
-```
 
----
+
 
 # Deployment Infrastructure
 
@@ -233,20 +223,28 @@ Pipeline workflow:
 
 
 # Hosted Application URLs
+## Hosted Application URLs
 
-Frontend → http://13.232.246.116:3000/
-Backend → http://13.232.246.116:8000/api/health
-Docs → http://13.232.246.116:8000/docs
+**Frontend**  
+http://13.232.246.116:3000/
+
+**Backend**  
+http://13.232.246.116:8000/api/health
+
+**Docs**  
+http://13.232.246.116:8000/docs
 
 
+## Jenkins CI/CD Server
 
-# Jenkins CI/CD Server
-
-Jenkins Dashboard
+**Jenkins Dashboard**  
 http://3.110.130.61:3000/
-http://3.110.130.61:8000/api/health
-http://3.110.130.61:8000/docs
 
+**Backend Health**  
+http://3.110.130.61:8000/api/health
+
+**Docs**  
+http://3.110.130.61:8000/docs
 
 
 
