@@ -240,9 +240,7 @@ Pipeline workflow:
 
 # Hosted Application URLs
 
-Frontend
-
-http://13.232.246.116:3000/
+Frontend : http://13.232.246.116:3000/
 
 
 Backend Health Check
