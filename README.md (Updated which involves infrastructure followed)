@@ -234,15 +234,9 @@ Pipeline workflow:
 
 # Hosted Application URLs
 
-Frontend : http://13.232.246.116:3000/
-
-
-Backend Health Check
-http://13.232.246.116:8000/api/health
-
-
-API Documentation
-http://13.232.246.116:8000/docs
+Frontend → http://13.232.246.116:3000/
+Backend → http://13.232.246.116:8000/api/health
+Docs → http://13.232.246.116:8000/docs
 
 
 
