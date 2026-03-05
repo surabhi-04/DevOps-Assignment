@@ -238,34 +238,38 @@ Frontend
 http://13.232.246.116:3000/
 
 Backend Health Check  
-<INSERT BACKEND HEALTH URL HERE>
+http://13.232.246.116:8000/api/health
 
 API Documentation  
-<INSERT API DOCS URL HERE>
+http://13.232.246.116:8000/docs
+
 
 
 # Jenkins CI/CD Server
 
 Jenkins Dashboard  
-<INSERT JENKINS DASHBOARD URL HERE>
+http://3.110.130.61:3000/
+
 
 Backend Health Check  
-<INSERT JENKINS BACKEND HEALTH URL HERE>
+http://3.110.130.61:8000/api/health
+
 
 API Docs  
-<INSERT JENKINS API DOCS URL HERE>
 
+http://3.110.130.61:8000/docs
 
 # External Architecture Documentation
 
 Google Docs
 
-<INSERT GOOGLE DOCS LINK HERE>
+https://docs.google.com/document/d/1OGMwhLVx3sOZOMKEGLvza9COUSm3a53pmrdP6MgjhSA/edit?usp=sharing
+
 
 
 # Demo Video
 
-<INSERT DEMO VIDEO LINK HERE>
+https://drive.google.com/file/d/1bZO1pE0eGuXk489rXWGRVOBKUbH9YLCs/view?usp=sharing
 
 
 # Final Notes
