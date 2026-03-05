@@ -1,1 +1,281 @@
+# DevOps Assignment
 
+This project implements a **production-oriented infrastructure setup** for a FastAPI backend and a Next.js frontend application.
+
+While the application itself is intentionally simple, the primary focus of this repository is **DevOps infrastructure design, containerization, CI/CD automation, and deployment on AWS using Infrastructure as Code (Terraform).**
+
+
+# Project Structure
+
+```
+.
+├── backend/                     # FastAPI backend service
+│   ├── app/
+│   │   └── main.py              # Main FastAPI application
+│   ├── requirements.txt         # Python dependencies
+│   └── Dockerfile               # Backend container definition
+│
+├── frontend/                    # Next.js frontend application
+│   ├── pages/
+│   │   └── index.js             # Main page
+│   ├── public/                  # Static assets
+│   ├── package.json             # Node.js dependencies
+│   └── Dockerfile               # Frontend container definition
+│
+├── docker-compose.yml           # Multi-container orchestration
+│
+├── Jenkinsfile                  # Jenkins CI/CD pipeline configuration
+│
+├── infra/                       # Terraform Infrastructure as Code
+│   ├── main.tf                  # Infrastructure resources
+│   ├── variables.tf             # Terraform variables
+│   ├── outputs.tf               # Terraform outputs
+│   ├── provider.tf              # AWS provider configuration
+│   └── terraform.tfvars         # Environment configuration
+│
+└── README.md                    # Project documentation
+```
+
+
+# Infrastructure Components Implemented
+
+This project extends the original codebase with the following DevOps components:
+
+- Docker containerization for backend and frontend
+- Docker Compose for multi-container orchestration
+- AWS EC2 infrastructure deployment
+- Jenkins CI/CD automation pipeline
+- Terraform Infrastructure as Code
+- SSH-based secure server access
+- Container-based deployment strategy
+
+
+# Prerequisites
+
+Before running this project locally, ensure the following tools are installed:
+
+- Python 3.8+
+- Node.js 16+
+- npm or yarn
+- Docker
+- Docker Compose
+
+
+# Backend Setup
+
+1. Navigate to the backend directory
+
+```bash
+cd backend
+```
+
+2. Create a virtual environment (recommended)
+
+```bash
+python -m venv venv
+source venv/bin/activate
+# On Windows:
+.\venv\Scripts\activate
+```
+
+3. Install dependencies
+
+```bash
+pip install -r requirements.txt
+```
+
+4. Run the FastAPI server
+
+```bash
+uvicorn app.main:app --reload --port 8000
+```
+
+The backend will be available at:
+
+```
+http://localhost:8000
+```
+
+---
+
+# Frontend Setup
+
+1. Navigate to the frontend directory
+
+```bash
+cd frontend
+```
+
+2. Install dependencies
+
+```bash
+npm install
+```
+
+3. Configure backend URL (optional)
+
+Edit `.env.local`:
+
+```
+NEXT_PUBLIC_API_URL=http://localhost:8000
+```
+
+4. Run the frontend server
+
+```bash
+npm run dev
+```
+
+The frontend will be available at:
+
+```
+http://localhost:3000
+```
+
+---
+
+# Running the Application with Docker
+
+Build and run containers using Docker Compose:
+
+```bash
+docker compose build
+docker compose up -d
+```
+
+Services will be available at:
+
+Frontend
+
+```
+http://localhost:3000
+```
+
+Backend
+
+```
+http://localhost:8000
+```
+
+---
+
+# Testing the Integration
+
+1. Ensure both backend and frontend services are running.
+
+2. Open the frontend in your browser:
+
+```
+http://localhost:3000
+```
+
+3. If everything is working correctly, you should see:
+
+- Backend connection status
+- The integration message from the backend
+- The current backend URL being used
+
+---
+
+# API Endpoints
+
+Health Check
+
+```
+GET /api/health
+```
+
+Response
+
+```json
+{
+  "status": "healthy",
+  "message": "Backend is running successfully"
+}
+```
+
+Integration Message
+
+```
+GET /api/message
+```
+
+Response
+
+```json
+{
+  "message": "You've successfully integrated the backend!"
+}
+```
+
+---
+
+# Deployment Infrastructure
+
+The project uses **AWS EC2 and Docker-based deployment**.
+
+Infrastructure components include:
+
+- Terraform EC2 instance (Infrastructure provisioning)
+- Jenkins EC2 instance (CI/CD automation)
+- Dockerized frontend and backend services
+- Docker Compose deployment strategy
+
+
+# CI/CD Pipeline (Jenkins)
+
+Pipeline workflow:
+
+1. Pull latest code from GitHub fork
+2. Build Docker images
+3. Deploy containers using Docker Compose
+4. Restart containers when new builds are triggered
+
+
+# Hosted Application URLs
+
+Frontend  
+http://13.232.246.116:3000/
+
+Backend Health Check  
+<INSERT BACKEND HEALTH URL HERE>
+
+API Documentation  
+<INSERT API DOCS URL HERE>
+
+
+# Jenkins CI/CD Server
+
+Jenkins Dashboard  
+<INSERT JENKINS DASHBOARD URL HERE>
+
+Backend Health Check  
+<INSERT JENKINS BACKEND HEALTH URL HERE>
+
+API Docs  
+<INSERT JENKINS API DOCS URL HERE>
+
+
+# External Architecture Documentation
+
+Google Docs
+
+<INSERT GOOGLE DOCS LINK HERE>
+
+
+# Demo Video
+
+<INSERT DEMO VIDEO LINK HERE>
+
+
+# Final Notes
+
+This implementation prioritizes:
+
+- Clear separation of responsibilities
+- Infrastructure reproducibility
+- Containerized deployments
+- CI/CD automation
+- Infrastructure as Code practices
+
+The design intentionally focuses on **strong DevOps fundamentals rather than unnecessary tool complexity.**
